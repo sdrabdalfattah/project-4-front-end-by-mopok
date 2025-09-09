@@ -347,6 +347,7 @@ console.log("sdfsdf",comments , PostID)
   >
         <img style={{maxHeight:"100px",borderRadius:"10px"}} src={imagePreview} alt="" />
 </Badge>
+
 </Box>
 
     <Box sx={{ display: "flex", p: 2, gap: 1, alignItems: "center", flexDirection:{ xs: "column", sm: "row", md: "row" }}}>
