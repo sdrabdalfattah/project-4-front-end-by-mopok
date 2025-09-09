@@ -137,7 +137,7 @@ window.location.reload()
           disabled
           id="outlined-disabled"
           label="gmail"
-          helperText="cant change gmail"
+          helperText="can't change Gmail"
             defaultValue={userInfo.email}
         />
 
