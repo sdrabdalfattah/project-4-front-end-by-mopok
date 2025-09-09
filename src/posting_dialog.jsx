@@ -119,6 +119,7 @@ setisLodaing(true)
                   badgeContent={
                       <CloseIcon
                         style={{
+                          color: "white",
                           cursor: "pointer",
                           background: "#292929ff",
                           borderRadius: "50%",
