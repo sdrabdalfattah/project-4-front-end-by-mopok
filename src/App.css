@@ -1,0 +1,47 @@
+body {
+
+width: 100%;
+
+}
+
+
+
+
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+   @keyframes heart {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.7;
+    filter: drop-shadow(0 0 0px red);
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+    filter: drop-shadow(0 0 1px red);
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px red);
+  }
+}
+
+
+
+
+.css-1lveh72-MuiDialogContent-root {
+  padding: 0px !important;
+  max-height: 95vh !important;
+}
