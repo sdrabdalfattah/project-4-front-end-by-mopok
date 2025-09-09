@@ -121,7 +121,9 @@ const handelImagePreview = (e) => {
 
 const LikeComment = (commentId) => {
 
-         setComments(prevComments =>
+  const prevComments = comments;
+
+  setComments(prevComments =>
     prevComments.map(comment =>
       comment._id === commentId
         ? {
@@ -135,18 +137,17 @@ const LikeComment = (commentId) => {
     )
   );
 
+  axios.post(`${BaseUrl}/like-comment/${commentId}`, {}, { withCredentials: true })
+    .then(function (response) {
+ 
+    })
+    .catch(function (error) {
 
-axios.post(`${BaseUrl}/like-comment/${commentId}`,{},{ withCredentials: true })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-      toast.error(error.response.data.message);
-        LoginERR({ error });
-  })
+      setComments(prevComments);
+      LoginERR({ error });
+    });
+};
 
-}
 
 
 const handelAddComment = () => {
