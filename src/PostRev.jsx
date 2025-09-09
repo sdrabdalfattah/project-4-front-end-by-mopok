@@ -94,7 +94,7 @@ const getPostComments = () => {
 
       <Divider />
       {openPostRev && post ? (
-        <DialogContent sx={{ overflow: "hidden" }}>
+        <DialogContent sx={{ overflow: "hidden",padding:"0" }}>
           <Box
             sx={{
       
