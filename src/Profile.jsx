@@ -322,7 +322,7 @@ return (
 
 
 
-<Box sx={{marginTop:"20px",width:"80%"}}>
+<Box sx={{marginTop:"20px",width:{ xs: "92%", sm: "90%", md: "80%" }}}>
 <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
   {userposts.map((userpost) => (
     <Box
