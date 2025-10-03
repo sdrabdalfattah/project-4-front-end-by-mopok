@@ -13,7 +13,7 @@ export default function LoginERR({ error }) {
           onClick={() => {
             window.location.href = `${BaseUrl}/auth/google`;
           }}
-          color='default'
+          color='primary'
           variant="extended"
           size="small"
         >
