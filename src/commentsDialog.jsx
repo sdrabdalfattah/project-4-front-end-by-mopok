@@ -379,9 +379,9 @@ console.log("sdfsdf",comments , PostID)
     onChange={handelImagePreview}
   />
   <label htmlFor="upload-image">
-    <Button  sx={{marginRight:"7px",height:"40px",width:"40px"}} variant='outlined' component="span">
+    <IconButton  sx={{marginRight:"7px",height:"40px",width:"40px"}} component="span">
       <ImageIcon/>
-    </Button>
+    </IconButton>
   </label>
   <Button loading={Loading} disabled={comment_content.trim() === "" && !imagePreview}  onClick={handelAddComment} variant="contained">
     <SendIcon />
