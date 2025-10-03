@@ -210,12 +210,13 @@ return (
       {/* Header Section */}
       <Box
         sx={{
-          alignItems: { xs: "center", md: "flex-start" },
+          alignItems: { xs: "center", md: "center" },
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
           width: "100%",
           gap: { xs: 2, sm: 3, md: 4 },
           textAlign: { xs: "center", md: "left" },
+          justifyContent: { xs: "center", md: "flex-start" },
         }}
       >
         {/* Avatar */}
@@ -231,17 +232,29 @@ return (
           }}
         />
 
-        {/* Name + Stats */}
-        <Box sx={{ flex: 1, width: "100%" }}>
-          <Typography
-            variant="h5"
-            sx={{ fontSize: { xs: "1.4rem", sm: "1.8rem", md: "2rem" } }}
-          >
-            {userInfo.name}
-          </Typography>
-          <Typography variant="body2" sx={{ opacity: 0.6, mb: 2 }}>
-            member since {dayjs(userInfo.createdAt).fromNow()}
-          </Typography>
+        {/* Name + Stats in a row for large screens */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: { xs: "center", md: "center" },
+            gap: { xs: 2, md: 6 },
+            flex: 1,
+            width: "100%",
+          }}
+        >
+          {/* Name */}
+          <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+            <Typography
+              variant="h5"
+              sx={{ fontSize: { xs: "1.6rem", sm: "1.8rem", md: "2.2rem" } }}
+            >
+              {userInfo.name}
+            </Typography>
+            <Typography variant="body2" sx={{ opacity: 0.6 }}>
+              member since {dayjs(userInfo.createdAt).fromNow()}
+            </Typography>
+          </Box>
 
           {/* Stats */}
           <Box
@@ -249,13 +262,12 @@ return (
               display: "flex",
               justifyContent: { xs: "center", md: "flex-start" },
               gap: { xs: 4, sm: 6, md: 8 },
-              mt: 1,
             }}
           >
             <Box sx={{ textAlign: "center" }}>
               <Typography
-                variant="h4"
-                sx={{ fontWeight: "700", fontSize: { xs: "1.6rem", md: "2rem" } }}
+                variant="h3"
+                sx={{ fontWeight: "700", fontSize: { xs: "1.8rem", md: "2.6rem" } }}
               >
                 {userInfo.followingCount}
               </Typography>
@@ -263,8 +275,8 @@ return (
             </Box>
             <Box sx={{ textAlign: "center" }}>
               <Typography
-                variant="h4"
-                sx={{ fontWeight: "700", fontSize: { xs: "1.6rem", md: "2rem" } }}
+                variant="h3"
+                sx={{ fontWeight: "700", fontSize: { xs: "1.8rem", md: "2.6rem" } }}
               >
                 {count}
               </Typography>
@@ -272,8 +284,8 @@ return (
             </Box>
             <Box sx={{ textAlign: "center" }}>
               <Typography
-                variant="h4"
-                sx={{ fontWeight: "700", fontSize: { xs: "1.6rem", md: "2rem" } }}
+                variant="h3"
+                sx={{ fontWeight: "700", fontSize: { xs: "1.8rem", md: "2.6rem" } }}
               >
                 {userpostsCount}
               </Typography>
