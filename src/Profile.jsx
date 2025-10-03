@@ -235,9 +235,6 @@ return (
         />
         <Box sx={{ textAlign: "left" }}>
           <Typography variant="h4">{userInfo.name}</Typography>
-          <Typography variant="h6" sx={{ opacity: "60%" }}>
-            {userInfo.email}
-          </Typography>
           <Typography variant="body2" sx={{ opacity: "40%" }}>
             member since {dayjs(userInfo.createdAt).fromNow()}
           </Typography>
