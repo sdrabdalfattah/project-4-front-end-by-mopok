@@ -242,28 +242,28 @@ return (
           sx={{
             display: "flex",
             justifyContent: "space-around",
-            width: { xs: "100%", sm: "auto" },
+            width: { xs: "100%", sm: "fit-content" },
             mt: { xs: 2, sm: 0 },
             gap: { xs: 3, sm: 5 },
           }}
         >
           <Box sx={{ textAlign: "center" }}>
-            <Typography variant="h5" sx={{ fontWeight: "700" }}>
+            <Typography variant="h3" sx={{ fontWeight: "700" }}>
               {userInfo.followingCount}
             </Typography>
-            <Typography variant="body2">following</Typography>
+            <Typography variant="h3">following</Typography>
           </Box>
           <Box sx={{ textAlign: "center" }}>
-            <Typography variant="h5" sx={{ fontWeight: "700" }}>
+            <Typography variant="h3" sx={{ fontWeight: "700" }}>
               {count}
             </Typography>
-            <Typography variant="body2">followers</Typography>
+            <Typography variant="h3">followers</Typography>
           </Box>
           <Box sx={{ textAlign: "center" }}>
-            <Typography variant="h5" sx={{ fontWeight: "700" }}>
+            <Typography variant="h3" sx={{ fontWeight: "700" }}>
               {userpostsCount}
             </Typography>
-            <Typography variant="body2">posts</Typography>
+            <Typography variant="h3">posts</Typography>
           </Box>
         </Box>
       </Box>
