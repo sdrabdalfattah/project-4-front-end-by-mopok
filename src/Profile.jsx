@@ -212,9 +212,9 @@ return (
         sx={{
           alignItems: { xs: "center", md: "center" },
           display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
+          flexDirection: { xs: "column", md: "row" }, // من md فما فوق يكون أفقي
           width: "100%",
-          gap: { xs: 2, sm: 3, md: 4 },
+          gap: { xs: 2, sm: 3, md: 6 },
           textAlign: { xs: "center", md: "left" },
           justifyContent: { xs: "center", md: "flex-start" },
         }}
@@ -232,13 +232,13 @@ return (
           }}
         />
 
-        {/* Name + Stats in a row for large screens */}
+        {/* Name + Stats */}
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
+            flexDirection: { xs: "column", md: "row" }, // من md فما فوق أفقي
             alignItems: { xs: "center", md: "center" },
-            gap: { xs: 2, md: 6 },
+            gap: { xs: 2, md: 8 },
             flex: 1,
             width: "100%",
           }}
@@ -261,13 +261,13 @@ return (
             sx={{
               display: "flex",
               justifyContent: { xs: "center", md: "flex-start" },
-              gap: { xs: 4, sm: 6, md: 8 },
+              gap: { xs: 4, sm: 6, md: 10 },
             }}
           >
             <Box sx={{ textAlign: "center" }}>
               <Typography
                 variant="h3"
-                sx={{ fontWeight: "700", fontSize: { xs: "1.8rem", md: "2.6rem" } }}
+                sx={{ fontWeight: "700", fontSize: { xs: "1.8rem", md: "2.8rem" } }}
               >
                 {userInfo.followingCount}
               </Typography>
@@ -276,7 +276,7 @@ return (
             <Box sx={{ textAlign: "center" }}>
               <Typography
                 variant="h3"
-                sx={{ fontWeight: "700", fontSize: { xs: "1.8rem", md: "2.6rem" } }}
+                sx={{ fontWeight: "700", fontSize: { xs: "1.8rem", md: "2.8rem" } }}
               >
                 {count}
               </Typography>
@@ -285,7 +285,7 @@ return (
             <Box sx={{ textAlign: "center" }}>
               <Typography
                 variant="h3"
-                sx={{ fontWeight: "700", fontSize: { xs: "1.8rem", md: "2.6rem" } }}
+                sx={{ fontWeight: "700", fontSize: { xs: "1.8rem", md: "2.8rem" } }}
               >
                 {userpostsCount}
               </Typography>
@@ -341,6 +341,7 @@ return (
     </>
   )}
 </Box>
+
 
 
 
