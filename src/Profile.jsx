@@ -196,29 +196,25 @@ return (
     width: "100%",
     borderBottom: "1px rgba(126, 126, 126, 0.34) solid",
     display: "flex",
-    padding: { xs: "5px 20px", sm: "5px 20px", md: "20px 70px" },
-    backgroundColor: "background.paper"
+    padding: { xs: "10px 15px", sm: "15px 30px", md: "20px 70px" },
+    backgroundColor: "background.paper",
   }}
 >
   {Loading ? (
-    <>
-    <Box sx={{ textAlign: "center", width:"100%",height:"100%" }}>
-    <Typography variant="h6">
-      loading profile...
-    </Typography>
-     <LinearProgress sx={{marginTop:"10px"}}/>
+    <Box sx={{ textAlign: "center", width: "100%", height: "100%" }}>
+      <Typography variant="h6">loading profile...</Typography>
+      <LinearProgress sx={{ marginTop: "10px" }} />
     </Box>
-    </>
   ) : (
     <>
-
+      {/* Header Section */}
       <Box
         sx={{
           alignItems: "center",
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
           width: "100%",
-          marginRight: "auto",
+          gap: { xs: 2, sm: 3 },
         }}
       >
         <Avatar
@@ -226,43 +222,45 @@ return (
           src={userInfo.avatar}
           alt=""
           sx={{
-            height: 120,
-            width: 120,
+            height: { xs: 90, sm: 120 },
+            width: { xs: 90, sm: 120 },
             cursor: "pointer",
             borderRadius: "50%",
-            mr: 2,
           }}
         />
-        <Box sx={{ textAlign: "left" }}>
-          <Typography variant="h4">{userInfo.name}</Typography>
-          <Typography variant="body2" sx={{ opacity: "40%" }}>
+        <Box sx={{ textAlign: { xs: "center", sm: "left" }, flex: 1 }}>
+          <Typography variant="h5" sx={{ fontSize: { xs: "1.4rem", sm: "2rem" } }}>
+            {userInfo.name}
+          </Typography>
+          <Typography variant="body2" sx={{ opacity: 0.6 }}>
             member since {dayjs(userInfo.createdAt).fromNow()}
           </Typography>
         </Box>
+
+        {/* Stats Section */}
         <Box
           sx={{
-            textAlign: "center",
-            justifyContent: "space-around",
             display: "flex",
-            marginBlock: { xs: "10px", sm: "10px", md: "0" },
-            width: { xs: "100%", sm: "300px", md: "300px" },
-            ml: { xs: 0, sm: 3, md: 7 },
+            justifyContent: "space-around",
+            width: { xs: "100%", sm: "auto" },
+            mt: { xs: 2, sm: 0 },
+            gap: { xs: 3, sm: 5 },
           }}
         >
           <Box sx={{ textAlign: "center" }}>
-            <Typography variant="h3" sx={{ fontWeight: "700" }}>
+            <Typography variant="h5" sx={{ fontWeight: "700" }}>
               {userInfo.followingCount}
             </Typography>
             <Typography variant="body2">following</Typography>
           </Box>
-                    <Box sx={{ textAlign: "center" }}>
-            <Typography variant="h3" sx={{ fontWeight: "700" }}>
+          <Box sx={{ textAlign: "center" }}>
+            <Typography variant="h5" sx={{ fontWeight: "700" }}>
               {count}
             </Typography>
             <Typography variant="body2">followers</Typography>
           </Box>
           <Box sx={{ textAlign: "center" }}>
-            <Typography variant="h3" sx={{ fontWeight: "700" }}>
+            <Typography variant="h5" sx={{ fontWeight: "700" }}>
               {userpostsCount}
             </Typography>
             <Typography variant="body2">posts</Typography>
@@ -270,19 +268,21 @@ return (
         </Box>
       </Box>
 
+      {/* Action Buttons */}
       <Box
         sx={{
-          justifyContent: { xs: "center", sm: "center", md: "left" },
-          pl: { xs: 0, sm: 0, md: "100px" },
           display: "flex",
-          mt: "12px",
+          justifyContent: { xs: "center", sm: "flex-start" },
+          flexWrap: "wrap",
+          gap: 2,
+          mt: 3,
           width: "100%",
         }}
       >
         {IsUser ? (
-          <Box>
+          <>
             <Button
-              sx={{ borderTopRightRadius: "10px", borderBottomRightRadius: "10px", mr: 1 }}
+              sx={{ minWidth: 120 }}
               startIcon={<LogoutIcon />}
               color="error"
               onClick={HandelopenLogOut}
@@ -291,18 +291,17 @@ return (
               log out
             </Button>
             <Button
-              sx={{ borderTopLeftRadius: "10px", borderBottomLeftRadius: "10px" }}
+              sx={{ minWidth: 140 }}
               startIcon={<EditIcon />}
               onClick={HandelopenEditPro}
               variant="contained"
             >
-              edit your profile
+              edit profile
             </Button>
-          </Box>
+          </>
         ) : (
           <Button
             color={followed ? "inherit" : "primary"}
-            sx={{ ml: { xs: "0", sm: "40px", md: "40px" } }}
             onClick={HandelFollow}
             size="large"
             startIcon={followed ? <PersonRemoveIcon /> : <AddIcon />}
@@ -314,7 +313,6 @@ return (
       </Box>
     </>
   )}
-        
 </Box>
 
 
