@@ -6,7 +6,7 @@ import BaseUrl from "./BaseUrl";
 
 export default function LoginERR({ error }) {
   if (error?.response?.data?.message === "NO_TKN") {
-    toast.error(
+    toast(
       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
         <Fab
           sx={{ flexShrink: 0, padding: "5px 10px" }}
