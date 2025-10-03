@@ -158,13 +158,11 @@ return (
   isLogged ? (
     <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
       <Badge badgeContent={notcount} color="error" overlap="circular">
-        <Button
-          variant="outlined"
+        <IconButton
           onClick={handleClickopenNot}
-          sx={{ height: "45px", width: "45px" }}
         >
           <NotificationsIcon />
-        </Button>
+        </IconButton>
       </Badge>
 
       <Button
