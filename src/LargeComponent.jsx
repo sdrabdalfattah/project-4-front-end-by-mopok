@@ -141,7 +141,6 @@ return (
         <Box sx={{display:"flex",marginLeft:"auto",alignItems:"center",justifyContent:"center",padding:"10px"}}>
 <IconButton 
   onClick={toggleMode} 
-  color="primary" 
   sx={{ height: "45px", width: "45px", borderRadius: "50%" }}
 >
   {mode === "dark" ? <SunnyIcon /> : <DarkModeIcon />}
