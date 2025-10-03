@@ -210,60 +210,75 @@ return (
       {/* Header Section */}
       <Box
         sx={{
-          alignItems: "center",
+          alignItems: { xs: "center", md: "flex-start" },
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
           width: "100%",
-          gap: { xs: 2, sm: 3 },
+          gap: { xs: 2, sm: 3, md: 4 },
+          textAlign: { xs: "center", md: "left" },
         }}
       >
+        {/* Avatar */}
         <Avatar
           onClick={() => handelImgReview(userInfo.avatar)}
           src={userInfo.avatar}
           alt=""
           sx={{
-            height: { xs: 90, sm: 120 },
-            width: { xs: 90, sm: 120 },
+            height: { xs: 100, sm: 120 },
+            width: { xs: 100, sm: 120 },
             cursor: "pointer",
             borderRadius: "50%",
           }}
         />
-        <Box sx={{ textAlign: { xs: "center", sm: "left" }, flex: 1 }}>
-          <Typography variant="h5" sx={{ fontSize: { xs: "1.4rem", sm: "2rem" } }}>
+
+        {/* Name + Stats */}
+        <Box sx={{ flex: 1, width: "100%" }}>
+          <Typography
+            variant="h5"
+            sx={{ fontSize: { xs: "1.4rem", sm: "1.8rem", md: "2rem" } }}
+          >
             {userInfo.name}
           </Typography>
-          <Typography variant="body2" sx={{ opacity: 0.6 }}>
+          <Typography variant="body2" sx={{ opacity: 0.6, mb: 2 }}>
             member since {dayjs(userInfo.createdAt).fromNow()}
           </Typography>
-        </Box>
 
-        {/* Stats Section */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-around",
-            width: { xs: "100%", sm: "fit-content" },
-            mt: { xs: 2, sm: 0 },
-            gap: { xs: 3, sm: 5 },
-          }}
-        >
-          <Box sx={{ textAlign: "center" }}>
-            <Typography variant="h3" sx={{ fontWeight: "700" }}>
-              {userInfo.followingCount}
-            </Typography>
-            <Typography variant="h3">following</Typography>
-          </Box>
-          <Box sx={{ textAlign: "center" }}>
-            <Typography variant="h3" sx={{ fontWeight: "700" }}>
-              {count}
-            </Typography>
-            <Typography variant="h3">followers</Typography>
-          </Box>
-          <Box sx={{ textAlign: "center" }}>
-            <Typography variant="h3" sx={{ fontWeight: "700" }}>
-              {userpostsCount}
-            </Typography>
-            <Typography variant="h3">posts</Typography>
+          {/* Stats */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: { xs: "center", md: "flex-start" },
+              gap: { xs: 4, sm: 6, md: 8 },
+              mt: 1,
+            }}
+          >
+            <Box sx={{ textAlign: "center" }}>
+              <Typography
+                variant="h4"
+                sx={{ fontWeight: "700", fontSize: { xs: "1.6rem", md: "2rem" } }}
+              >
+                {userInfo.followingCount}
+              </Typography>
+              <Typography variant="body1">following</Typography>
+            </Box>
+            <Box sx={{ textAlign: "center" }}>
+              <Typography
+                variant="h4"
+                sx={{ fontWeight: "700", fontSize: { xs: "1.6rem", md: "2rem" } }}
+              >
+                {count}
+              </Typography>
+              <Typography variant="body1">followers</Typography>
+            </Box>
+            <Box sx={{ textAlign: "center" }}>
+              <Typography
+                variant="h4"
+                sx={{ fontWeight: "700", fontSize: { xs: "1.6rem", md: "2rem" } }}
+              >
+                {userpostsCount}
+              </Typography>
+              <Typography variant="body1">posts</Typography>
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -272,7 +287,7 @@ return (
       <Box
         sx={{
           display: "flex",
-          justifyContent: { xs: "center", sm: "flex-start" },
+          justifyContent: { xs: "center", md: "flex-start" },
           flexWrap: "wrap",
           gap: 2,
           mt: 3,
