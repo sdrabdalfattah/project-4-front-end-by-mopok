@@ -45,13 +45,8 @@ export default function DeleteComment({handleCloseDeleteComment,fetchComments ,s
   aria-describedby="logout-dialog-description"
 >
   <DialogTitle id="logout-dialog-title">
-    {"Are you sure you want to log out?"}
+    {"Are you sure you want to delete this comment ?"}
   </DialogTitle>
-  <DialogContent>
-    <DialogContentText id="logout-dialog-description">
-      You will delete this comment
-    </DialogContentText>
-  </DialogContent>
   <DialogActions>
     <Button onClick={handleCloseDeleteComment} color="primary">
       Cancel
